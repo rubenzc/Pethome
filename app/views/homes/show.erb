@@ -1,0 +1,8 @@
+
+<h4>Your home:</h4>
+
+<h5><%= "#{@home.address} - #{@home.postcode}" %></h5>
+<br><br>
+<%= link_to("Edit", edit_home_path(@home)) %> 
+<br><br>
+<%= link_to("Back", home_path(@home)) %> 

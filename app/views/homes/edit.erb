@@ -1,0 +1,21 @@
+<% if @home.errors.any? %>
+    <ul>
+      <% @home.errors.full_messages.each do |error| %>
+        <li> <%= "#{error}" %> </li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_for  @home do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <br>
+  <%= f.label :postcode %>
+  <%= f.text_field :postcode %>
+  <br>
+  <%= f.submit 'Save' %>
+
+<% end %>
+
+<br>
+<%= link_to("Cancel", @home) %>

@@ -3,7 +3,8 @@ function initMap() {
   var coordinates = [{lat: 40.1720, lng: -3.6567 },
                     {lat: 40.4000, lng: -3.7167 },
                     {lat: 40.3805031, lng: -3.6336483 },
-                    {lat: 40.3319506, lng: -3.7686545 }];
+                    {lat: 40.20561439999999, lng: -4.0882782 }]
+                    
 
   var map = new google.maps.Map(document.getElementById('map'), {
    zoom: 8,

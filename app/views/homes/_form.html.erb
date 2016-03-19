@@ -1,9 +1,36 @@
+<div class="centered">
+  <h1>Create your new home</h1>
+  <%= form_tag homes_path, :method => :get do %>
+    <p>
+      <%= text_field_tag :search, params[:search],:id => 'geo-input' %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+  
+</div>
+
+<%= form_for @home, url: homes_path, html: { multipart: true } do |f| %>
+  <%= f.file_field :avatar %>
+  <%= link_to image_tag(@post.image.url(:large)), @post.image.url %>
+<% end %>
+
+
+
 <%= form_for @home do |f| %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <br>
-  <%= f.label :postcode %>
-  <%= f.text_field :postcode %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :pet_type %>
+  <%= f.text_field :pet_type %>
+  <br>
+  <%= f.file_field :avatar %>
+  <br>
   <%= f.submit 'Save' %>
 
 <% end %>

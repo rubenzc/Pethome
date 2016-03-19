@@ -11,14 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318160053) do
+ActiveRecord::Schema.define(version: 20160319162855) do
 
-  create_table "homes", force: :cascade do |t|
-    t.string "address"
-    t.string "postcode"
-    t.float  "latitude"
-    t.float  "longitude"
-    t.string "city"
-  end
+# Could not dump table "homes" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

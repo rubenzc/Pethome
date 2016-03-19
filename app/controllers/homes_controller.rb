@@ -1,12 +1,10 @@
 class HomesController < ApplicationController
-	
 	def new
   	@home = Home.new
   end
 	
 	def create
     @home = Home.new home_params
-    
     if @home.save
       redirect_to @home
     else
@@ -16,7 +14,11 @@ class HomesController < ApplicationController
   end
 
   def index
-    @homes = Home.all
+    if params[:search].present?
+      @homes = Home.near(params[:search])
+    else
+      @homes = Homes.all
+    end
   end
 
   def show
@@ -35,13 +37,12 @@ class HomesController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   private
-
+  
   def home_params
-    params.require(:home).permit(:address, :postcode)
+    params.require(:home).permit(:address, :avatar)
   end
 
 end

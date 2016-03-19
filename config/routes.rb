@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-root 'dashboard_controller#index'
+root 'site#home'
 
 resources :homes
 

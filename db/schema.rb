@@ -11,9 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319162855) do
+ActiveRecord::Schema.define(version: 20160321085953) do
 
-# Could not dump table "homes" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "homes", force: :cascade do |t|
+    t.string   "address"
+    t.string   "postcode"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "state"
+    t.integer  "max_pets"
+    t.string   "type_pet"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "phone_number"
+  end
 
 end

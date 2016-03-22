@@ -1,0 +1,88 @@
+<!-- Search Field -->
+  <div class="flex-container c-1column" id="locationField">
+    <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
+  </div>
+  <!-- Street Address -->
+  <div class="flex-container">
+    <div class="flex-item c-2column">
+      <%= f.label :Route %>
+      <%= f.text_field :address, id: "route"  %>
+    </div>
+    <div class="flex-item c-2column">
+      <%= f.label :Street_Number %>
+      <%= f.text_field :address, id: "street_number"  %>
+    </div>
+  </div>
+  <!-- City -->
+  <div class="flex-container">
+    <div class="flex-item c-1column">
+      <%= f.label :City %>
+      <%= f.text_field :address, id: "locality"  %>
+    </div>
+  </div>
+
+  <!-- State & Zip -->
+  <div class="flex-container">
+    <div class="flex-item c-2column">
+      <%= f.label :State %>
+      <%= f.text_field :state, id: "administrative_area_level_1"  %>
+    </div>
+    <div class="flex-item c-2column">
+      <%= f.label :Zip_Code %>
+      <%= f.text_field :postcode, id: "postal_code"  %>
+    </div>
+  </div>
+  <!-- Country -->
+  <div class="flex-container">
+    <%= f.label :Country %>
+    <%= f.text_field :country, id: "country"  %>
+  </div>
+
+  <!-- Name -->
+  <div class="flex-container">
+    <%= f.label :Name %>
+    <%= f.text_field :name, id: "name"  %>
+  </div>
+
+   <!-- Phone -->
+  <div class="flex-container">
+    <%= f.label :Phone_number %>
+    <%= f.text_field :phone_number, id: "phone_number"  %>
+  </div>
+
+  <!-- Email -->
+  <div class="flex-container">
+    <%= f.label :Email %>
+    <%= f.text_field :email, id: "email"  %>
+  </div>
+
+<!-- Type pet -->
+
+  <div class="flex-container">
+    <label>Type pet</label>
+      <select id="type_pet" class="flex-item">
+        <option value="Bird">Bird</option>
+        <option value="Cat">Cat</option>
+        <option value="Dog">Dog</option>
+        <option value="Reptil">Reptil</option>
+      </select>
+  </div>
+
+<!-- Type pet -->
+
+<!-- Max number of pets -->
+  <div class="flex-container">
+    <%= f.label :max_pets %>
+    <%= f.text_field :max_pets, id: "max_pets"  %>
+  </div>
+
+  <div class="flex-container">
+    <%= f.label :Photo %>
+    <%= f.file_field :avatar  %>
+  </div>
+
+  <div class="flex-container">
+    <%= f.submit 'Save' %>
+  </div>
+
+<% end %>

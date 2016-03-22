@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 root 'site#home'
 
+# index  =>    GET /homes
+# new    =>    GET /home/new
+# create =>   POST /homes/new
+# show   =>    GET /homes/:id
+# edit   =>    GET /homes/:id/edit
+# update =>    PUT /homes/:id
+# delete => DELETE /homes/:id
+
+
 resources :homes
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,13 +1,15 @@
-<!-- Hero content: will be in the middle -->
-<body onload="initialize()">
+<h1>Search Map</h1>
+<body>
     <div class="home_background">
       <img src="" class="wall_home">
-    	<!-- Search bar autcomplete -->
     	<div class="flex-container c-2column" id="locationField">
-				<input class="flex-item" id="autocomplete" placeholder="Search for your Pet Home" onFocus="geolocate()" type="text"></input>
-			</div>
+				<input class="flex-item" id="autocomplete" placeholder="Search for your Pet Home" onFocus="initMap()" type="text"></input>
+				<button type="button" onFocus="initMap()">Search</button>
 		</div>
+		<div>
+			<div id="map"></div>
+		</div>
+	</div>
 </body>
 
-
-
+<script>initialize()</script>

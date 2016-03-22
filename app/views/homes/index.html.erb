@@ -1,0 +1,24 @@
+<% @homes.each do |home| %>
+<h2>Your home</h2>
+	<h4>Address: <%= home.address %></h4>
+	<h4>Number: <%= home.street_number %></h4>
+	<h4>City: <%= home.city %></h4>
+	<h4>State: <%= home.state %></h4>
+	<h4>Zip code: <%= home.postcode %></h4>
+	<h4>Country: <%= home.country %></h4>
+	<h4>Name: <%= home.name %></h4>
+	<h4>Surname: <%= home.surname %></h4>
+	<h4>Phone number: <%= home.phone_number %></h4>
+	<h4>Email: <%= home.email %></h4>
+	<h4>Type pet: <%= home.type_pet %></h4>
+	<h4>Max. pets: <%= home.max_pets %></h4>
+	<h4>Title: <%= home.title %></h4>
+	<h4>Description: <%= home.description %></h4>
+	<h4>Image: <%= image_tag(asset_path(home.avatar.path(:medium))) if home.avatar? %></h4>
+
+	<br><br>
+		<%= link_to("Edit", edit_home_path(home)) %> 
+	<br><br>
+		<%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+	
+<% end %>

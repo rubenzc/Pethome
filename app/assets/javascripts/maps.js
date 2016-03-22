@@ -29,9 +29,6 @@ function initMap() {
      info_window.open(map, marker);
     });
   })
-  
-
-
 }      
 
 function geocodeAddress(geocoder, resultsMap) {

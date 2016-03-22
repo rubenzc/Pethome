@@ -24,11 +24,16 @@ ActiveRecord::Schema.define(version: 20160321085953) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "state"
+    t.integer  "street_number"
+    t.string   "country"
     t.integer  "max_pets"
     t.string   "type_pet"
     t.string   "name"
+    t.string   "surname"
     t.string   "email"
     t.integer  "phone_number"
+    t.string   "title"
+    t.string   "description"
   end
 
 end

@@ -1,0 +1,14 @@
+<h1>Search bar</h1>
+<%= form_tag(search_path, method: :post, id: "search-form") do %>
+      <img src="" class="wall_home">
+    	<!-- Search bar autocomplete -->
+    	<div class="flex-container c-2column" id="locationField">
+    		<%= text_field_tag :search, nil, value: @query, placeholder: "Search by city", class: "flex-item" %>
+			<%= submit_tag "Search" %>
+		</div>
+
+<% end %>
+
+	<div>
+		<div id="map"></div>
+	</div>

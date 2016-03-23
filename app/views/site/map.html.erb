@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Geo Map</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="input-wrapper">
-      <input type="text" name="get-places" id="get-places">
+<!-- BUSCADOR -->
+<h1>Search bar</h1>
+<%= form_tag(search_path, method: :post, id: "search-form") do %>
+    <div class="home_background">
+      <img src="" class="wall_home">
+      <!-- Search bar autocomplete -->
+      <div class="flex-container c-2column" id="locationField">
+        <%= text_field_tag :search, nil, value: @query, placeholder: "Search by city", class: "flex-item" %>
+        <%= submit_tag "Search" %>
+      </div>
     </div>
-    <div id="map"></div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="geolocation.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-  </body>
-</html>
+<% end %>
+
+<!-- MAPA -->
+  <div id="map"></div>
+
+  <script>initMap()</script>
+
+

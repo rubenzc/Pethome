@@ -4,7 +4,7 @@ function initMap() {
                     {lat: 40.4000, lng: -3.7167 },
                     {lat: 40.3805031, lng: -3.6336483 },
                     {lat: 40.20561439999999, lng: -4.0882782 }]
-                    
+                  
 
   var map = new google.maps.Map(document.getElementById('map'), {
    zoom: 8,
@@ -12,12 +12,12 @@ function initMap() {
   });
 
   coordinates.forEach(function(coords){
-    var info_content = '<p>Esto es Latitud: ' + coords['lat'] + ' </p><p>Esto es Longitud:  </p>'
+    var info_content = '<p>Latitud: ' + coords['lat'] + ' </p><p>Longitud:  </p>'
     var marker = new google.maps.Marker({
      position: coords,
      map: map,
      title: 'TITLE HERE',
-     icon: 'assets/marker.png'
+     icon: '/assets/marker.png'
     });
 
     var info_window = new google.maps.InfoWindow({
@@ -29,6 +29,9 @@ function initMap() {
      info_window.open(map, marker);
     });
   })
+  
+
+
 }      
 
 function geocodeAddress(geocoder, resultsMap) {

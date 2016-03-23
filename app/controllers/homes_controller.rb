@@ -1,11 +1,15 @@
 class HomesController < ApplicationController
 	
+  def search
+    @homes = Home.near params[:search], 20
+    render :index
+  end
 
- # GET /homes/new
+  # GET /homes/new
   def new
   	@home = Home.new
   end
-	
+
   # POST /homes
 	def create
     @home = Home.new (home_params)

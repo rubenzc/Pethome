@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-root 'site#home'
+root 'site#index'
+
+# get '/filter_homes/:city' => 'homes#filter_by_city'
 
 # index  =>    GET /homes
 # new    =>    GET /home/new
@@ -10,7 +12,11 @@ root 'site#home'
 # delete => DELETE /homes/:id
 
 
-resources :homes
+resources :homes 
+
+  # Example of regular route:
+  post 'site/search' => 'site#search', as: "search"
+  get 'site/map' => 'site#map', as: "map"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -19,7 +25,7 @@ resources :homes
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

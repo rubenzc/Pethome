@@ -1,6 +1,7 @@
 <h2>Register your home</h2>
 <%= form_for @home, html: { multipart: true, id: "address", class: "form-address" } do |f| %>
   <!-- Search Field -->
+  <form>
   <div class="flex-container c-1column" id="locationField">
     <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
   </div>
@@ -95,6 +96,7 @@
   <div class="flex-container">
     <%= f.submit 'Save' %>
   </div>
+  </form>
 
 <% end %>
 

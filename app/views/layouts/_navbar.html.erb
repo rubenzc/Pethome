@@ -1,35 +1,18 @@
-<section class="hero is-info is-large">
-  <!-- Hero header: will stick at the top -->
-  <div class="hero-header">
-    <header class="header">
-      <div class="container">
-        <div class="header-left">
-          <a class="header-item">
-            <%= link_to "PET HOME", root_path, class: "header-tab" %>
-          </a>
+<!-- NAVBAR MENU -->
+<div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <%= link_to "Pet Home", root_path, class: "navbar-brand" %>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home list", homes_path, class: "active" %></li>
+                <li><%= link_to "Register home", new_home_path, class: "page-scroll" %></li>
+            </ul>
+          </div>
         </div>
-        <span class="header-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <div class="header-right header-menu">
-          <span class="header-item">
-              <%= link_to "Show homes", homes_path, class: "header-tab" %>
-          </span>
-          <span class="header-item">
-            <%= link_to "Register home", new_home_path %>
-          </span>
-          <span class="header-item">
-            <a class="button is-info is-inverted">
-              <i class="fa fa-github"></i>
-              TEST
-            </a>
-          </span>
-        </div>
-      </div>
-    </header>
-  </div>
-  </section>
+      </nav>
+</div>
 
-  
+      

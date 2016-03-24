@@ -1,14 +1,23 @@
-<h1>Search bar</h1>
-<%= form_tag(search_path, method: :post, id: "search-form") do %>
-      <img src="" class="wall_home">
-    	<!-- Search bar autocomplete -->
-    	<div class="flex-container c-2column" id="locationField">
-    		<%= text_field_tag :search, nil, value: @query, placeholder: "Search by city", class: "flex-item" %>
-			<%= submit_tag "Search" %>
-		</div>
+<!-- BACKGROUND HOME AND NAVBAR -->
+<section class="hero is-success is-fullheight">
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="title">
+        Feel like at home
+      </h1>
+	      <p>
+		      <%= form_tag(search_path, method: :post, id: "search-form") do %>
+		      	<%= text_field_tag :search, nil, value: @query, placeholder: "Search by city and press Enter", class: "form-control" %>
+            <%= submit_tag "Search" %>
+		      <% end %>
+	      </p> 
+    </div>
+  </div>
+</section>
 
-<% end %>
+<div>
+	<div id="map"></div>
+</div>
 
-	<div>
-		<div id="map"></div>
-	</div>
+<script>initialize()</script>
+

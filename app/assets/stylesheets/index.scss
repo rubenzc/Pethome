@@ -1,0 +1,54 @@
+// Place all the styles related to the Site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body{
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+}
+
+.navbar{
+    background-color:white;
+    height: 55px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #2196F3;
+    border: 0;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.hero-content {
+	background-image: url(/assets/dog_slept.jpg);
+	}
+
+.flex-item{
+	margin-bottom: 75px;
+}
+
+.hero.is-success .title{
+	margin-bottom: 70px;
+	color: white;
+}
+
+.title{
+	font-size: 60px;
+	font-color: white;
+}
+
+.navbar {
+  background-color: #607D8B;
+  height: 55px;
+}
+
+element.style {
+    font-size: large;
+    color: ghostwhite;
+    font-family: 'Montserrat', sans-serif;
+}
+
+

@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>PetHome</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.16/css/bulma.min.css" %>
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Luckiest+Guy" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Montserrat" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Cabin:400,700" %>
+
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 
     <!-- Compiled and minified CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
     <!-- Compiled and minified JavaScript -->
-    
-    
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXq2Ybcp12gMdRC1qsVsZpRMm_KRbJGw&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXq2Ybcp12gMdRC1qsVsZpRMm_KRbJGw&callback=initMap">
     </script>
-    
     
   </head>
 
@@ -25,4 +24,5 @@
     <%= render "layouts/navbar" %>
     <%= flash.alert %>
     <%= yield %>
+    <%= render "layouts/footer" %>
 </body>

@@ -14,9 +14,10 @@ class HomesController < ApplicationController
 	def create
     @home = Home.new (home_params)
     if @home.save
-      redirect_to @home
+      flash.now[:alert] = 'Issue was successfully created'
+      redirect_to '@home'
     else
-      flash.now[:alert] = "Bad parameters"
+      flash.now[:alert] = 'Something went wrong, please fill all the fields and try it again'
       render 'new'
     end
   end
@@ -46,7 +47,9 @@ class HomesController < ApplicationController
     if @home.update_attributes(home_params)
       redirect_to @home
     else
+      flash[:alert] = 'Something went wrong, please try it again'
       render 'edit'
+      flash[:alert] = ''
     end
   end
 

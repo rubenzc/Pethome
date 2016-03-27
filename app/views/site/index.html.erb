@@ -5,19 +5,26 @@
       <h1 class="title">
         Feel like at home
       </h1>
+      <div id="input-wrapper">
+      </div>
 	      <p>
 		      <%= form_tag(search_path, method: :post, id: "search-form") do %>
 		      	<%= text_field_tag :search, nil, value: @query, placeholder: "Search by city and press Enter", class: "form-control" %>
-            <%= submit_tag "Search" %>
+            <%= submit_tag "SEARCH" %>
 		      <% end %>
-	      </p> 
+	      </p>
+
+        
+
+        <!-- BUSCADOR CON AUTOCOMPLETE
+        <div class="form-group">
+          <label>Insert your Address</label>
+            <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
+        </div> -->
+
     </div>
   </div>
 </section>
-
-<div>
-	<div id="map"></div>
-</div>
 
 <script>initialize()</script>
 

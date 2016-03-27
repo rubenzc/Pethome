@@ -1,0 +1,85 @@
+<% if flash_message != "" %>
+  <%= flash_message %>
+<% end %>
+
+<!-- Search Field -->
+<div class="container">
+  <h1 class="title">Register your home</h1>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <form role="form"> 
+          <div class="form-group">
+          <label>Insert your Address</label>
+            <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
+          </div>
+            <%= form_for @home, html: { multipart: true, id: "address", class: "form-address" } do |f| %>
+              <div class="form-group">
+                <%= f.label :Address %>
+                <%= f.text_field :address, id: "route"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Street_Number %>
+                <%= f.text_field :street_number, id: "street_number"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :City %>
+                <%= f.text_field :city, id: "locality"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :State %>
+                <%= f.text_field :state, id: "administrative_area_level_1"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Zip_Code %>
+                <%= f.text_field :postcode, id: "postal_code"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Country %>
+                <%= f.text_field :country, id: "country"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Name %>
+                <%= f.text_field :name, id: "name"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Surname %>
+                <%= f.text_field :surname, id: "surname"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Phone_number %>
+                <%= f.text_field :phone_number, id: "phone_number"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Email %>
+                <%= f.text_field :email, id: "email"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Type_of_pet %>
+                <%= f.select :type_pet, %w(bird cat dog reptile ) %>
+              </div>
+              <div class="form-group">
+                <%= f.label :max_pets %>
+                <%= f.text_field :max_pets, id: "max_pets"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Title_Advertisement%>
+                <%= f.text_field :title, id: "title"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Home_description %>
+                <%= f.text_area :description, id: "description"  %>
+              </div>
+              <div class="form-group">
+                <%= f.label :Photo %>
+                <%= f.file_field :avatar %>
+              </div>
+              <div class="form-group">
+                <%= f.submit 'Save' %>
+              </div>
+            <% end %>
+        </form>
+      </div>
+    </div>
+</div>
+
+<script>initialize()</script>

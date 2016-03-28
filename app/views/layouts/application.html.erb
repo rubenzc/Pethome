@@ -10,6 +10,7 @@
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Cabin:400,700" %>
 <!--     <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" %> -->
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXq2Ybcp12gMdRC1qsVsZpRMm_KRbJGw&libraries=places" %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
@@ -19,9 +20,6 @@
   <%= yield %>
   <%= render 'partials/footer' %>
   
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXq2Ybcp12gMdRC1qsVsZpRMm_KRbJGw&callback=initMap">
-  </script>
 
 </body>
 </html>

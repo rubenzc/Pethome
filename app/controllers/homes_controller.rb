@@ -15,7 +15,7 @@ class HomesController < ApplicationController
     @home = Home.new (home_params)
     if @home.save
       flash.now[:alert] = 'Issue was successfully created'
-      redirect_to '@home'
+      redirect_to @home
     else
       flash.now[:alert] = 'Something went wrong, please fill all the fields and try it again'
       render 'new'

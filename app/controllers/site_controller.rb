@@ -9,7 +9,8 @@ class SiteController < ApplicationController
 	end
 
 	def search
-    @homes = Home.near params[:search], 20
+    params[:distance] ||= 20
+    @homes = Home.near params[:search], params[:distance]
     render :map
   end
 

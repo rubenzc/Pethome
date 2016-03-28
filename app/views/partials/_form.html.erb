@@ -12,7 +12,9 @@
           <label>Insert your Address</label>
             <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
           </div>
-            <%= form_for @home, html: { multipart: true, id: "address", class: "form-address" } do |f| %>
+        </form>
+            <%= form_for @home, multipart: true, id: "address", class: "form-address" do |f| %>
+            foo
               <div class="form-group">
                 <%= f.label :Address %>
                 <%= f.text_field :address, id: "route"  %>
@@ -77,10 +79,11 @@
                 <%= f.submit 'Save' %>
               </div>
             <% end %>
-        </form>
       </div>
     </div>
 </div>
+
+<div class="home_info" lat="2323233" lng="232323" style="display: none" />
 
 
 <script>initialize()</script>

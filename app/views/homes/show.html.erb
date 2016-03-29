@@ -1,21 +1,47 @@
-<h2>Your home</h2>
-	<h4>Address: <%= @home.address %></h4>
-	<h4>Number: <%= @home.street_number %></h4>
-	<h4>City: <%= @home.city %></h4>
-	<h4>State: <%= @home.state %></h4>
-	<h4>Zip code: <%= @home.postcode %></h4>
-	<h4>Country: <%= @home.country %></h4>
-	<h4>Name: <%= @home.name %></h4>
-	<h4>Surname: <%= @home.surname %></h4>
-	<h4>Phone number: <%= @home.phone_number %></h4>
-	<h4>Email: <%= @home.email %></h4>
-	<h4>Type pet: <%= @home.type_pet %></h4>
-	<h4>Max. pets: <%= @home.max_pets %></h4>
-	<h4>Title: <%= @home.title %></h4>
-	<h4>Description: <%= @home.description %></h4>
-	<h4>Image: <%= image_tag(asset_path(@home.avatar.path(:medium))) if @home.avatar? %></h4>
 
-	<br><br>
-		<%= link_to("Edit", edit_home_path(@home)) %> 
-	<br><br>
-		<%= link_to("Delete", @home, method: :delete) %> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="head">
+          <div class="panel-title" id="title">
+            <span class="hidden-xs"><%= @home.title %></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= image_tag(asset_path(@home.avatar.path(:medium))) if @home.avatar? %>
+        <div class="col-md-9">
+          <ul class="items">
+            <li></h2>Name: <%= @home.name %></h2></li>
+            <li></h2>Surname: <%= @home.surname %></h2></li>
+            <li></h2>City: <%= @home.city %></h2></li>
+            <li></h2><b>Number:</b> <%= @home.street_number %></h2></li>
+            <li></h2>State: <%= @home.state %></h2></li>
+            <li></h2>Zip code: <%= @home.postcode %></h2></li>
+            <li></h2>Country: <%= @home.country %></h2></li>
+            <li></h2>Email: <%= @home.email %></h2></li>
+            <li></h2>Phone number: <%= @home.phone_number %></h2></li>
+            <li></h2>Type pet: <%= @home.type_pet %></h2></li>
+            <li></h2>Max. pets: <%= @home.max_pets %></h2></li>
+          </ul>
+          </div>
+          <div class="col-md-12">
+          <span>Description: </span>
+            <h2>Description: <%= @home.description %></h2>
+          </div>
+          </div>
+          <div class="panel-footer">
+            <div class="coupon-code">
+              <span class="print">
+                  <%= link_to("Edit", edit_home_path(@home)) %>
+              </span>
+              <span>
+                <%= link_to 'Destroy', @home, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -14,6 +14,6 @@
     var coordinates = <%= raw(@homes.map { |home| { lat: home.latitude, lng: home.longitude, add: home.address, post: home.postcode, city: home.city, avatar: home.avatar.path(:medium), state: home.state, str_number: home.street_number, country: home.country, max_pets: home.max_pets, type_pet: home.type_pet, name: home.name, surname: home.surname, email: home.email, phone_num: home.phone_number, title: home.title, desc: home.description, show_url: home_path(home) } }.to_json) %>;
     initMap(coordinates);
   <% else %>
-    $("#map").html("No hay casas en el area seleccionada")
+    $("#map").html("There are no homes for your search")
   <% end %>
 </script>

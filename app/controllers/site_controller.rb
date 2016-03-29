@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
-	
-	def index
+  
+  def index
 		if params[:search]
 			@homes = Home.search(params[:search])
 		else

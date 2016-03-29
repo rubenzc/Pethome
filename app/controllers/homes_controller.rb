@@ -1,16 +1,14 @@
 class HomesController < ApplicationController
-	
+
   def search
     @homes = Home.near params[:search], 20
     render :index
   end
 
-  # GET /homes/new
   def new
   	@home = Home.new
   end
 
-  # POST /homes
 	def create
     @home = Home.new (home_params)
     if @home.save
@@ -22,7 +20,6 @@ class HomesController < ApplicationController
     end
   end
 
-# GET /homes
   def index
     if params[:search].present?
       @homes = Home.near(params[:search])
@@ -31,17 +28,14 @@ class HomesController < ApplicationController
     end
   end
 
-# GET /homes/1
   def show
     @home = Home.find(params[:id]) 
   end
 
-# GET /homes/1/edit
   def edit
     @home = Home.find(params[:id]) 
   end
 
-# PATCH/PUT /homes/1
   def update
     @home = Home.find(params[:id])
     if @home.update_attributes(home_params)
@@ -53,18 +47,15 @@ class HomesController < ApplicationController
     end
   end
 
-# DELETE /homes/1
   def destroy
     @home = Home.find(params[:id])
     @home.destroy
     redirect_to homes_path
   end
 
-
   private
-  
-  def home_params
-    params.require(:home).permit(:address, :street_number, :city, :state, :postcode, :country, :name, :surname, :phone_number, :email, :type_pet, :max_pets, :title, :description, :avatar)
-  end
+    def home_params
+      params.require(:home).permit(:address, :street_number, :city, :state, :postcode, :country, :name, :surname, :phone_number, :email, :type_pet, :max_pets, :title, :description, :avatar)
+    end
 
 end

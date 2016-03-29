@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PetHome</title>
+      <link rel="stylesheet" media="all" href="/assets/bootstrap.min.self-378d10b56fd63927369e7b6da17703e86d0d7de382b2101320d06597842837e4.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/bootstrap.self-1ce60b7619827061820973528b6238a80f122acd8e6b8ee1187073e3962ee0ae.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/bulma.self-dc3a150840cfacc2299fdb83074094a11a9dbab0a0aad6532d95cd5cc21bbd8e.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/bulma.min.self-8de5099fbe51840f3a862ebdac2f15038c71573cce3b621cf709a7320d437979.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/form.self-cd01a385c07835ad4cb20cb0e8ccb5311df2063d5ae78cf016c99b19f35bbc06.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/home.self-22dc048d3dae965c94db9da51edc4aafadb77791631d3931cfb1a07bb508f9ea.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/index.self-8803e9c2d090c51fe8b5b9d5332c8584cdc617701d53a4178e2160aaa064c2c9.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/style_map.self-9c9f05b09fef0bf26898eff26dac3c84b0dee38a5cc93f82404c31efe6d3deff.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" />
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Luckiest+Guy" />
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Montserrat:700,400" />
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Cabin:400,700" />
+      
+      <script src="/assets/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1"></script>
+<script src="/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1"></script>
+<script src="/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1"></script>
+<script src="/assets/autocomplete.self-288a41ddeecd3e1a34a64c19f920a789fcf8e130d2c14efea49fe7c149a527c8.js?body=1"></script>
+<script src="/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1"></script>
+<script src="/assets/maps.self-5de21d86b3eec27cfd0c1d4585e2a5a107df4923fc494af17a425adf051bb18f.js?body=1"></script>
+<script src="/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXq2Ybcp12gMdRC1qsVsZpRMm_KRbJGw&amp;libraries=places"></script>
+      
+      <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="z18WAw6ww9QR7EVK8a1vpdhGMYO/CcsXDi46XATGAokYnRG3R58Lh9Kr/ryMeUGwb8kmPYU9kdvw+YVy+d58ug==" />
+  </head>
+  <body>
+    <!-- NAVBAR MENU -->
+<div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Pet Home</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="active" href="/homes">Home list</a></li>
+                <li><a class="page-scroll" href="/homes/new">Register home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>
+
+      
+    
+      
+
+<!-- Search Field -->
+<div class="container">
+  <h1 class="title">Register your home</h1>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <form role="form"> 
+          <div class="form-group">
+          <label>Insert your Address</label>
+            <input class="flex-item" id="autocomplete" placeholder="Insert your address" onFocus="geolocate()" type="text"></input>
+          </div>
+          </form>
+            <form class="new_home" id="new_home" enctype="multipart/form-data" action="/homes" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9efyycnc+IgDCqOaqCoBHpjpKlAcZ6Tnca3Y0g0yqwwiJfV9gPMw28BNGGzV/i8LL2Y97iZT/iuPemf88CrVPw==" />
+              <div class="form-group">
+                <label for="home_Address">Address</label>
+                <input id="route" type="text" name="home[address]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Street_Number">Street number</label>
+                <input id="street_number" type="text" name="home[street_number]" />
+              </div>
+              <div class="form-group">
+                <label for="home_City">City</label>
+                <input id="locality" type="text" name="home[city]" />
+              </div>
+              <div class="form-group">
+                <label for="home_State">State</label>
+                <input id="administrative_area_level_1" type="text" name="home[state]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Zip_Code">Zip code</label>
+                <input id="postal_code" type="text" name="home[postcode]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Country">Country</label>
+                <input id="country" type="text" name="home[country]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Name">Name</label>
+                <input id="name" type="text" name="home[name]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Surname">Surname</label>
+                <input id="surname" type="text" name="home[surname]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Phone_number">Phone number</label>
+                <input id="phone_number" type="text" name="home[phone_number]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Email">Email</label>
+                <input id="email" type="text" name="home[email]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Type_of_pet">Type of pet</label>
+                <select name="home[type_pet]" id="home_type_pet"><option value="bird">bird</option>
+<option value="cat">cat</option>
+<option value="dog">dog</option>
+<option value="reptile">reptile</option></select>
+              </div>
+              <div class="form-group">
+                <label for="home_max_pets">Max pets</label>
+                <input step="1" id="max_pets" min="1" max="5" type="number" name="home[max_pets]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Title_Advertisement">Title advertisement</label>
+                <input id="title" type="text" name="home[title]" />
+              </div>
+              <div class="form-group">
+                <label for="home_Home_description">Home description</label>
+                <textarea id="description" name="home[description]">
+</textarea>
+              </div>
+              <div class="form-group">
+                <label for="home_Photo">Photo</label>
+                <input type="file" name="home[avatar]" id="home_avatar" />
+              </div>
+              <div class="form-group">
+                <input type="submit" name="commit" value="Save" />
+              </div>
+</form>      </div>
+    </div>
+</div>
+
+<div class="home_info" lat="2323233" lng="232323" style="display: none" />
+
+
+<script>initialize()</script>
+<br/>
+<a href="/homes">Cancel</a>
+    <footer class="footer">
+  <div class="container">
+    <hr>
+      <div class="text-center center-block">
+        <p class="txt-railway">- Developed by <b>Rubén Zaldívar</b> -</p>
+      </div>
+    <hr>
+  </div>
+</footer>
+
+  </body>
+</html>

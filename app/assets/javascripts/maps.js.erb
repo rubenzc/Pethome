@@ -1,6 +1,3 @@
-
-
-
 function initMap(coordinates) {
   var map = new google.maps.Map(document.getElementById('map'), {
    zoom: 9,
@@ -10,8 +7,8 @@ function initMap(coordinates) {
 //Contenido del infowindow de las coordenadas
   coordinates.forEach(function(coords){
      var contentString = 
-     '<img src="/' + coords['avatar'] + '" />' +
       '<h3>' + coords['title'] + ' </h3>' +
+      '<img src="/' + coords['avatar'] + '" />' +
       '<p>' + coords['desc'] + ' </p>' +
       '<p>Name: ' + coords['name'] + ' </p>' +
       '<p>Surname: ' + coords['surname'] + ' </p>' +
@@ -19,7 +16,6 @@ function initMap(coordinates) {
       '<p>Street number: ' + coords['str_number'] + ' </p>' +
       '<p>City: ' + coords['city'] + ' </p>' +
       '<p>Type pet: ' + coords['type_pet'] + ' </p>' +
-      '<p>Max pets: ' + coords['max_pets'] + ' </p>' +
       '<p>Max pets: ' + coords['max_pets'] + ' </p>' +
       '<p>Phone number: ' + coords['phone_num'] + ' </p>' +
       '<p>Email: ' + coords['email'] + ' </p>' +

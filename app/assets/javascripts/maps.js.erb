@@ -4,7 +4,6 @@ function initMap(coordinates) {
    center: coordinates[0]
 });
 
-//Contenido del infowindow de las coordenadas
 coordinates.forEach(function(coords){
   var contentString = 
     '<h3>' + coords['title'] + ' </h3>' +
@@ -12,7 +11,7 @@ coordinates.forEach(function(coords){
     '<p>' + coords['desc'] + ' </p>' +
     '<p>Name: ' + coords['name'] + ' </p>' +
     '<p>Surname: ' + coords['surname'] + ' </p>' +
-    '<p>Address: ' + coords['address'] + ' </p>' +
+    '<p>Address: ' + coords['add'] + ' </p>' +
     '<p>Street number: ' + coords['str_number'] + ' </p>' +
     '<p>City: ' + coords['city'] + ' </p>' +
     '<p>Type pet: ' + coords['type_pet'] + ' </p>' +
@@ -21,7 +20,6 @@ coordinates.forEach(function(coords){
     '<p>Email: ' + coords['email'] + ' </p>' +
     '<a href="' + coords['show_url'] + '" > Show home </a>'
     
-  //Cómo va a pintar el marcador
   var marker = new google.maps.Marker({
      position: coords,
      map: map,
@@ -29,49 +27,19 @@ coordinates.forEach(function(coords){
      icon: '/assets/marker.png'
   });
 
-  //Contenido que irá en el infowindow
   var info_window = new google.maps.InfoWindow({
     content: contentString
-    //position : coords
   });
 
   marker.addListener('click', function() {
     info_window.open(map, marker);
     });
-  })
-} //End coordinates.forEach(function(coords)
+  }) //End coordinates.forEach(function(coords)
+} //End initMap(coordinates)
 
-//Función que pinta los marcardores
 function createMarker(position, address){
   var marker = new google.maps.Marker({
     position: position,
     map: map
   });
 }
-
-//Almacena y muestra los marcadores desde localStorage
-// function showMarkers(){
-
-//   var locations = JSON.parse(window.localStorage.getItem("locations")) || [] ;
-
-//   if(locations){
-//     locations.forEach(function showMarkers (location) {
-//       createMarker(location.position, location.address);
-//     });
-//   }
-// }  
-
-// function geocodeAddress(geocoder, resultsMap) {
-//   var address = document.getElementById('address').value;
-//   geocoder.geocode({'address': address}, function(results, status) {
-//     if (status === google.maps.GeocoderStatus.OK) {
-//       resultsMap.setCenter(results[0].geometry.location);
-//       var marker = new google.maps.Marker({
-//         map: resultsMap,
-//         position: results[0].geometry.location
-//       });
-//     } else {
-//       alert('Geocode was not successful for the following reason: ' + status);
-//     }
-//   });
-// }
